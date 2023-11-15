@@ -1,19 +1,8 @@
 import UIKit
 
-class ImagesListViewController: UIViewController {
+final class ImagesListViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     private let photosName: [String] = Array(0..<20).map{ "\($0)" }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
-        
-        //tableView.register(ImagesListCell.self, forCellReuseIdentifier: ImagesListCell.reuseIdentifier) если таблица настраивается с помощью кода
-    }
-    
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -21,16 +10,22 @@ class ImagesListViewController: UIViewController {
         formatter.locale = Locale(identifier: "ru")
         return formatter
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+    }
 }
 
 extension ImagesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photosName.count //сколько ячеек в секции
+        return photosName.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ImagesListCell.reuseIdentifier, for: indexPath)
-        
         guard let imageListCell = cell as? ImagesListCell else {
             return UITableViewCell()
         }
@@ -45,36 +40,31 @@ extension ImagesListViewController {
         guard let image = UIImage(named:photosName[indexPath.row]) else {
             return
         }
+        let gradientLayer = setBackgroundGradient(for: cell, with: indexPath)
         
-        cell.cellImage.image = image
-        cell.likeButton.setImage(UIImage(named: "No Active"), for: .normal)
-        cell.likeButton.setImage(UIImage(named: "Active"), for: .selected)
-        cell.dateLabel.text = dateFormatter.string(from: Date())
-        
-        if indexPath.row % 2 == 0 {
-            cell.likeButton.isSelected = true
-        } else {
-            cell.likeButton.isSelected = false
-        }
-                
-        setBackgroundGradient(for: cell, with: indexPath)
+        cell.confugure(cellImage: image,
+                       noActiveButtonImage: UIImage(named: "No Active") ?? UIImage(),
+                       activeButtonImage: UIImage(named: "Active") ?? UIImage(),
+                       date: dateFormatter.string(from: Date()),
+                       isSelected: indexPath.row % 2 == 0,
+                       gradientLayer: gradientLayer
+        )
     }
     
-    func setBackgroundGradient(for cell: ImagesListCell, with indexPath: IndexPath) {
+    func setBackgroundGradient(for cell: ImagesListCell, with indexPath: IndexPath) -> CAGradientLayer{
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = cell.gradient.bounds
+        gradientLayer.frame = cell.getGradientBounds()
         gradientLayer.colors = [#colorLiteral(red: 0.1019607843, green: 0.1058823529, blue: 0.1333333333, alpha: 0).cgColor, #colorLiteral(red: 0.1019607843, green: 0.1058823529, blue: 0.1333333333, alpha: 0.2).cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.locations = [0.0, 0.5]
 
-        cell.gradient.layer.insertSublayer(gradientLayer, at: 0)
+        return gradientLayer
     }
 }
 
 extension ImagesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //действия при тапе на ячейку
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
