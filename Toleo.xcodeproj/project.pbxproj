@@ -13,8 +13,11 @@
 		4814B9322AF4414E007B6C90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4814B9302AF4414E007B6C90 /* Main.storyboard */; };
 		4814B9342AF4414F007B6C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4814B9332AF4414F007B6C90 /* Assets.xcassets */; };
 		4814B9372AF4414F007B6C90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4814B9352AF4414F007B6C90 /* LaunchScreen.storyboard */; };
+		481E7EC42B08DB7B008257A8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E7EC32B08DB7B008257A8 /* ProfileViewController.swift */; };
+		485C72A52B0900D100CB5044 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 485C72A42B0900D100CB5044 /* SF-Pro.ttf */; };
 		48992ACF2AFBD9F500C48A5E /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48992ACE2AFBD9F500C48A5E /* ImagesListCell.swift */; };
 		48C139032AF6717100B5E9BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 48C139022AF6717100B5E9BE /* .gitignore */; };
+		48F7669E2B09F93B00EBAF42 /* SingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7669D2B09F93B00EBAF42 /* SingleImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +29,11 @@
 		4814B9332AF4414F007B6C90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4814B9362AF4414F007B6C90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4814B9382AF4414F007B6C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481E7EC32B08DB7B008257A8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		485C72A42B0900D100CB5044 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		48992ACE2AFBD9F500C48A5E /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
 		48C139022AF6717100B5E9BE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		48F7669D2B09F93B00EBAF42 /* SingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,15 +67,34 @@
 		4814B9292AF4414E007B6C90 /* Toleo */ = {
 			isa = PBXGroup;
 			children = (
+				48F7669C2B09F90F00EBAF42 /* SingleImage */,
+				485C729D2B08FDCC00CB5044 /* Resources */,
+				481E7EC02B08D8B8008257A8 /* Profile */,
 				48992AD02AFBDA6700C48A5E /* ImagesList */,
 				4814B92A2AF4414E007B6C90 /* AppDelegate.swift */,
 				4814B92C2AF4414E007B6C90 /* SceneDelegate.swift */,
 				4814B9302AF4414E007B6C90 /* Main.storyboard */,
-				4814B9332AF4414F007B6C90 /* Assets.xcassets */,
 				4814B9352AF4414F007B6C90 /* LaunchScreen.storyboard */,
-				4814B9382AF4414F007B6C90 /* Info.plist */,
 			);
 			path = Toleo;
+			sourceTree = "<group>";
+		};
+		481E7EC02B08D8B8008257A8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				481E7EC32B08DB7B008257A8 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		485C729D2B08FDCC00CB5044 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				485C72A42B0900D100CB5044 /* SF-Pro.ttf */,
+				4814B9332AF4414F007B6C90 /* Assets.xcassets */,
+				4814B9382AF4414F007B6C90 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		48992AD02AFBDA6700C48A5E /* ImagesList */ = {
@@ -79,6 +104,14 @@
 				48992ACE2AFBD9F500C48A5E /* ImagesListCell.swift */,
 			);
 			path = ImagesList;
+			sourceTree = "<group>";
+		};
+		48F7669C2B09F90F00EBAF42 /* SingleImage */ = {
+			isa = PBXGroup;
+			children = (
+				48F7669D2B09F93B00EBAF42 /* SingleImageViewController.swift */,
+			);
+			path = SingleImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +176,7 @@
 				4814B9372AF4414F007B6C90 /* LaunchScreen.storyboard in Resources */,
 				4814B9342AF4414F007B6C90 /* Assets.xcassets in Resources */,
 				4814B9322AF4414E007B6C90 /* Main.storyboard in Resources */,
+				485C72A52B0900D100CB5044 /* SF-Pro.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +187,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F7669E2B09F93B00EBAF42 /* SingleImageViewController.swift in Sources */,
 				4814B92F2AF4414E007B6C90 /* ImagesListViewController.swift in Sources */,
 				48992ACF2AFBD9F500C48A5E /* ImagesListCell.swift in Sources */,
+				481E7EC42B08DB7B008257A8 /* ProfileViewController.swift in Sources */,
 				4814B92B2AF4414E007B6C90 /* AppDelegate.swift in Sources */,
 				4814B92D2AF4414E007B6C90 /* SceneDelegate.swift in Sources */,
 			);
@@ -310,7 +346,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WUB6FU39JB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Toleo/Info.plist;
+				INFOPLIST_FILE = Toleo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -342,7 +378,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WUB6FU39JB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Toleo/Info.plist;
+				INFOPLIST_FILE = Toleo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
