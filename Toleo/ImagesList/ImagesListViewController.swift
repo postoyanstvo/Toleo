@@ -2,7 +2,7 @@ import UIKit
 
 final class ImagesListViewController: UIViewController {
     private var showSingleImageIdentifier = "ShowSingleImage"
-    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView?
     private let photosName: [String] = Array(0..<20).map{ "\($0)" }
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -14,15 +14,15 @@ final class ImagesListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+        tableView?.dataSource = self
+        tableView?.delegate = self
+        tableView?.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == showSingleImageIdentifier {
-            let viewController = segue.destination as! SingleImageViewController
-            let indexPath = sender as! IndexPath
+            guard let viewController = segue.destination as? SingleImageViewController,
+                  let indexPath = sender as? IndexPath else { return }
             let image = UIImage(named: photosName[indexPath.row])
             viewController.image = image
         } else {
@@ -65,7 +65,10 @@ extension ImagesListViewController {
     
     func setBackgroundGradient(for cell: ImagesListCell, with indexPath: IndexPath) -> CAGradientLayer{
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = cell.getGradientBounds()
+        guard let gradientBounds = cell.getGradientBounds() else {
+            return CAGradientLayer()
+        }
+        gradientLayer.frame = gradientBounds
         gradientLayer.colors = [#colorLiteral(red: 0.1019607843, green: 0.1058823529, blue: 0.1333333333, alpha: 0).cgColor, #colorLiteral(red: 0.1019607843, green: 0.1058823529, blue: 0.1333333333, alpha: 0.2).cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
