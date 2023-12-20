@@ -1,22 +1,19 @@
 import UIKit
 
 final class SingleImageViewController: UIViewController {
-    var image: UIImage! {
+    var image: UIImage? {
         didSet{
             guard isViewLoaded else { return }
+            guard let singleImageView = singleImageView else { return }
             singleImageView.image = image
             rescaleAndCenterImageInScrollView(image: image)
         }
     }
-    
-    @IBOutlet private var singleImageView: UIImageView!
-    
-    @IBOutlet private weak var scrollView: UIScrollView!
-    
+    @IBOutlet private var singleImageView: UIImageView?
+    @IBOutlet private weak var scrollView: UIScrollView?
     @IBAction private func didTapBackButton() {
         dismiss(animated: true, completion: nil)
-    }
-    
+    }    
     @IBAction private func didTapShareButton(_ sender: UIButton) {
         guard let imageShare = image else { return }
         let activityViewController = UIActivityViewController(
@@ -27,13 +24,17 @@ final class SingleImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let singleImageView = singleImageView,
+              let scrollView = scrollView else { return }
         singleImageView.image = image
         scrollView.minimumZoomScale = 0.1
         scrollView.maximumZoomScale = 1.25
         rescaleAndCenterImageInScrollView(image: image)
     }
     
-    private func rescaleAndCenterImageInScrollView(image: UIImage) {
+    private func rescaleAndCenterImageInScrollView(image: UIImage?) {
+        guard let image = image,
+              let scrollView = scrollView else { return }
         let minZoomScale = scrollView.minimumZoomScale
         let maxZoomScale = scrollView.maximumZoomScale
         view.layoutIfNeeded()
