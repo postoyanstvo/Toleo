@@ -1,16 +1,14 @@
 import UIKit
+import Kingfisher
 
 final class ProfileViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        view.backgroundColor = .ypBlack
-        setupAvatarImageView()
-        setupNameLabel()
-        setupLoginLabel()
-        setupDescriptionLabel()
-        setupLogoutButton()
-    }
+    
+    //MARK: - Properties
+    
+    private let profileService = ProfileService.shared
+    private let tokenStorage = OAuth2TokenStorage.shared
+    private let profileImageService = ProfileImageService.shared
+    private var profileImageServiceObserver: NSObjectProtocol?
     
     private let avatarImageView: UIImageView = {
         let avatarImage = UIImage(named: "EmpthyProfilePhoto")
@@ -21,7 +19,7 @@ final class ProfileViewController: UIViewController {
     
     private var nameLabel: UILabel = {
         let nameLabel = UILabel()
-        nameLabel.text = "Екатерина Новикова"
+        nameLabel.text = "..."
         nameLabel.font = UIFont(name: "SF Pro", size: 23)
         nameLabel.font = UIFont.boldSystemFont(ofSize: 23)
         nameLabel.textColor = .ypWhite
@@ -30,7 +28,7 @@ final class ProfileViewController: UIViewController {
     
     private var loginLabel: UILabel = {
         let loginLabel = UILabel()
-        loginLabel.text = "@ekaterina_nov"
+        loginLabel.text = "..."
         loginLabel.font = UIFont(name: "SF Pro", size: 13)
         loginLabel.textColor = .ypGray
         return loginLabel
@@ -38,7 +36,7 @@ final class ProfileViewController: UIViewController {
     
     private var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
-        descriptionLabel.text = "Hello, world!"
+        descriptionLabel.text = "..."
         descriptionLabel.textColor = .ypWhite
         descriptionLabel.font = UIFont(name: "SF Pro", size: 13)
         return descriptionLabel
@@ -47,12 +45,30 @@ final class ProfileViewController: UIViewController {
     private var logoutButton: UIButton = {
         let logoutButton = UIButton.systemButton(
             with: UIImage(named: "Exit")!,
-            target: self,
+            target: ProfileViewController.self,
             action: #selector(Self.didTapLogoutButton)
         )
         logoutButton.tintColor = .ypRed
         return logoutButton
     } ()
+    
+    //MARK: - Lifecicle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        view.backgroundColor = .ypBlack
+        setupAvatarImageView()
+        setupNameLabel()
+        setupLoginLabel()
+        setupDescriptionLabel()
+        setupLogoutButton()
+        fetchUserProfile()
+        startLoadingAnimations()
+        addProfileImageServiceObserver()
+    }
+    
+    //MARK: - Functions
     
     private func setupAvatarImageView() {
         view.addSubview(avatarImageView)
@@ -114,5 +130,78 @@ final class ProfileViewController: UIViewController {
     @objc
     private func didTapLogoutButton() {
         print("Tapped Exit")
+    }
+    
+    private func updateUIWithProfile(_ profile: Profile) {
+        nameLabel.text = profile.name
+        loginLabel.text = profile.loginName
+        descriptionLabel.text = profile.bio
+    }
+    
+    private func fetchUserProfile() {
+        guard let token = tokenStorage.token else {
+            print("Error: there is no token")
+            return
+        }
+        
+        profileService.fetchProfile(with: token) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let profile):
+                    self?.updateUIWithProfile(profile)
+                    self?.fetchProfileImageURL(for: profile.username)
+                case .failure(let error):
+                    print("Error fetching profile: \(error)")
+                }
+            }
+        }
+    }
+    
+    private func fetchProfileImageURL(for username: String) {
+        profileImageService.fetchProfileImageURL(username: username) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self?.updateAvatar()
+                case .failure(let error):
+                    print("Error while getting profile Image URL: \(error)")
+                }
+            }
+        }
+    }
+    
+    private func updateAvatar() {                                   
+        guard
+            let profileImageURL = profileImageService.profileImageURL,
+            let url = URL(string: profileImageURL)
+        else { return }
+            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "user_photo"))
+    }
+    
+    private func addProfileImageServiceObserver() {
+        profileImageServiceObserver = NotificationCenter.default
+            .addObserver(
+                forName: ProfileImageService.didChangeNotification,
+                object: nil,
+                queue: .main
+            ) { [weak self] _ in
+                guard let self = self else { return }
+                self.updateAvatar()
+            }
+        updateAvatar()
+    }
+    
+    func loadingAnimation(loadingLabel: UILabel) {
+        let loadingText = "Loading"
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.repeat, .autoreverse], animations: {
+            loadingLabel.text = "\(loadingText)."
+        }, completion: nil)
+    }
+    
+    func startLoadingAnimations() {
+        loadingAnimation(loadingLabel: nameLabel)
+        loadingAnimation(loadingLabel: loginLabel)
+        loadingAnimation(loadingLabel: descriptionLabel)
     }
 }
