@@ -15,18 +15,10 @@ final class OAuth2Service {
         completion: @escaping(Result<String, Error>) -> Void
     ) {
         assert(Thread.isMainThread)
-        if task != nil {
-            if lastCode != code {
-                task?.cancel()
-            } else {
-                return
-            }
-        } else {
-            if lastCode == code {
-                return
-            }
-        }
+        guard code != lastCode else { return }
+        task?.cancel()
         lastCode = code
+        
         let request = authTokenRequest(code: code)
         let task = URLSession.shared.objectTask(for: request) { (result: Result<OAuthTokenResponseBody, Error>) in
             switch result {

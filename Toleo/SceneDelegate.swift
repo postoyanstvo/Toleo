@@ -17,6 +17,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = SplashViewController()
         window?.makeKeyAndVisible()
     }
+    
+    func switchToInitialViewController() {
+        let initialViewController = SplashViewController()
+        
+        window?.rootViewController = UINavigationController(rootViewController: initialViewController)
+        
+        if let window = self.window {
+            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        }
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
