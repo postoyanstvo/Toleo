@@ -36,11 +36,11 @@ final class ImagesListCell: UITableViewCell {
     
     func configure(with photo: Photo, dateFormatter: DateFormatter) {
         cellImage.kf.indicatorType = .activity
-        cellImage.kf.setImage(with: URL(string: photo.smallImageURL), placeholder: UIImage(named: "Stub"))
+        cellImage.kf.setImage(with: URL(string: photo.smallImageURL), placeholder: UIImage(named: "loading_stub"))
         
-        dateLabel.text = photo.createdAt?.toStringJustDate()
+        dateLabel.text = photo.createdAt?.toString()
         let isLiked = photo.isLiked
-        let likeImage = isLiked ? UIImage(named: "Active") : UIImage(named: "No Active")
+        let likeImage = isLiked ? UIImage(named: "like_button_on") : UIImage(named: "like_button_off")
         likeButton.setImage(likeImage, for: .normal)
     }
     

@@ -1,99 +1,127 @@
 import UIKit
+import Kingfisher
 
 final class ImagesListViewController: UIViewController {
-    private var showSingleImageIdentifier = "ShowSingleImage"
-    @IBOutlet private var tableView: UITableView?
-    private let photosName: [String] = Array(0..<20).map{ "\($0)" }
+    private var photos: [Photo] = []
+    private let imagesListService = ImagesListService()
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "ru")
+        
         return formatter
     }()
     
+    @IBOutlet private weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView?.dataSource = self
-        tableView?.delegate = self
-        tableView?.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+        configureTableView()
+        addImageListObserver()
+        imagesListService.fetchPhotosNextPage()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == showSingleImageIdentifier {
-            guard let viewController = segue.destination as? SingleImageViewController,
-                  let indexPath = sender as? IndexPath else { return }
-            let image = UIImage(named: photosName[indexPath.row])
-            viewController.image = image
-        } else {
-            super.prepare(for: segue, sender: sender)
+    private func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+    }
+    
+    private func addImageListObserver() {
+        NotificationCenter.default.addObserver(
+            forName: ImagesListService.didChangeNotification,
+            object: nil,
+            queue: .main) { [weak self] _ in
+                self?.updateTableViewAnimated()
+            }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func updateTableViewAnimated() {
+        let oldCount = photos.count
+        let newCount = imagesListService.photos.count
+        photos = imagesListService.photos
+        
+        tableView.performBatchUpdates {
+            let indexPaths = (oldCount..<newCount).map { IndexPath(row: $0, section: 0) }
+            tableView.insertRows(at: indexPaths, with: .automatic)
         }
+    }
+    
+    private func configureCell(_ cell: ImagesListCell, for indexPath: IndexPath) {
+        let photo = photos[indexPath.row]
+        cell.configure(with: photo, dateFormatter: dateFormatter)
+        cell.delegate = self
     }
 }
 
 extension ImagesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photosName.count
+        return photos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ImagesListCell.reuseIdentifier, for: indexPath)
-        guard let imageListCell = cell as? ImagesListCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ImagesListCell.reuseIdentifier, for: indexPath) as? ImagesListCell else {
             return UITableViewCell()
         }
-        
-        configCell(for: imageListCell, with: indexPath)
-        return imageListCell
-    }
-}
-
-extension ImagesListViewController {
-    func configCell(for cell: ImagesListCell, with indexPath: IndexPath) {
-        guard let image = UIImage(named:photosName[indexPath.row]) else {
-            return
-        }
-        let gradientLayer = setBackgroundGradient(for: cell, with: indexPath)
-        
-        cell.confugure(cellImage: image,
-                       noActiveButtonImage: UIImage(named: "No Active") ?? UIImage(),
-                       activeButtonImage: UIImage(named: "Active") ?? UIImage(),
-                       date: dateFormatter.string(from: Date()),
-                       isSelected: indexPath.row % 2 == 0,
-                       gradientLayer: gradientLayer
-        )
+        configureCell(cell, for: indexPath)
+        return cell
     }
     
-    func setBackgroundGradient(for cell: ImagesListCell, with indexPath: IndexPath) -> CAGradientLayer{
-        let gradientLayer = CAGradientLayer()
-        guard let gradientBounds = cell.getGradientBounds() else {
-            return CAGradientLayer()
-        }
-        gradientLayer.frame = gradientBounds
-        gradientLayer.colors = [#colorLiteral(red: 0.1019607843, green: 0.1058823529, blue: 0.1333333333, alpha: 0).cgColor, #colorLiteral(red: 0.1019607843, green: 0.1058823529, blue: 0.1333333333, alpha: 0.2).cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
-        gradientLayer.locations = [0.0, 0.5]
-
-        return gradientLayer
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let photo = photos[indexPath.row]
+        let imageHeight = photo.size.height
+        let imageWidth = photo.size.width
+        
+        let tableViewWidth = tableView.bounds.width
+        let scale = tableViewWidth / imageWidth
+        
+        return imageHeight * scale
     }
 }
 
 extension ImagesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: showSingleImageIdentifier, sender: indexPath)
+        showSingleImageViewController(with: photos[indexPath.row])
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let image = UIImage(named:photosName[indexPath.row]) else {
-            return 0
+    private func showSingleImageViewController(with photo: Photo) {
+        let singleImageVC = SingleImageViewController()
+        singleImageVC.photo = photo
+        let navigationController = UINavigationController(rootViewController: singleImageVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = imagesListService.photos.count - 1
+        if indexPath.row == lastElement {
+            imagesListService.fetchPhotosNextPage()
         }
-        let imageInserts = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
-        let imageViewWight = tableView.bounds.width - imageInserts.left - imageInserts.right
-        let imageWight = image.size.width
-        let scale = imageViewWight/imageWight
-        let imageHeight = image.size.height
-        let cellHeight = imageHeight * scale - imageInserts.top - imageInserts.bottom
-        return cellHeight
     }
 }
 
+extension ImagesListViewController: ImagesListCellDelegate {
+    func imageListCellDidTapLike(_ cell: ImagesListCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let photo = photos[indexPath.row]
+        let isLike = !photo.isLiked
+        
+        UIBlockingProgressHUD.show()
+        imagesListService.changeLike(photoId: photo.id, isLike: isLike) { [weak self] result in
+            switch result {
+            case .success():
+                self?.photos[indexPath.row].isLiked = isLike
+                self?.tableView.reloadRows(at: [indexPath], with: .none)
+                UIBlockingProgressHUD.dismiss()
+            case .failure(let error):
+                print("Error changing like status: \(error)")
+                UIBlockingProgressHUD.dismiss()
+            }
+        }
+    }
+}

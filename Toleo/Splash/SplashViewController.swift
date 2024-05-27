@@ -31,12 +31,14 @@ final class SplashViewController: UIViewController {
     }
     
     private func checkToken() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             if self.tokenStorage.hasToken() {
                 self.switchToTabBarController()
             } else {
                 self.showAuthViewController()
             }
+            print("token")
         }
     }
     
@@ -61,22 +63,20 @@ extension SplashViewController {
         let tabBarController = UIStoryboard(name: "Main", bundle: .main)
             .instantiateViewController(identifier: "TabBarViewController")
         window.rootViewController = tabBarController
+        print("bar")
     }
     
     private func showAuthViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let authViewController = storyboard.instantiateViewController(withIdentifier: "AuthViewController") as? AuthViewController else {
-            print("Ошибка: не удалось инициализировать AuthViewController из сториборда")
-            return
-        }
+        let authViewController = OAuthViewController()
         authViewController.delegate = self
         authViewController.modalPresentationStyle = .fullScreen
         present(authViewController, animated: true, completion: nil)
+        print("auth")
     }
 }
 
-extension SplashViewController: AuthViewControllerDelegate {
-    func authViewController(_ vc: AuthViewController, didAuthenticateWithCode code: String) {
+extension SplashViewController: OAuthViewControllerDelegate {
+    func authViewController(_ vc: OAuthViewController, didAuthenticateWithCode code: String) {
         UIBlockingProgressHUD.show()
         dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
