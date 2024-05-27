@@ -1,14 +1,13 @@
 import UIKit
 
-fileprivate extension CGFloat {
-    static let sighInButtonHeight: CGFloat = 48
-    static let insets: CGFloat = 16
-    static let bottomInsets: CGFloat = 90
-    static let logoSize: CGFloat = 60
-    static let cornerRadius: CGFloat = 16
-}
-
 final class OAuthViewController: UIViewController {
+    private enum Constants {
+        static let sighInButtonHeight: CGFloat = 48
+        static let insets: CGFloat = 16
+        static let bottomInsets: CGFloat = 90
+        static let logoSize: CGFloat = 60
+        static let cornerRadius: CGFloat = 16
+    }
     
     weak var delegate: OAuthViewControllerDelegate?
     
@@ -27,7 +26,7 @@ final class OAuthViewController: UIViewController {
         button.setTitleColor(.ypBlack, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 17)
         button.clipsToBounds = true
-        button.layer.cornerRadius = .cornerRadius
+        button.layer.cornerRadius = Constants.cornerRadius
         
         return button
     }()
@@ -73,10 +72,10 @@ final class OAuthViewController: UIViewController {
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            signInButton.heightAnchor.constraint(equalToConstant: .sighInButtonHeight),
-            signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.insets),
-            signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .insets),
-            signInButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -.bottomInsets)
+            signInButton.heightAnchor.constraint(equalToConstant: Constants.sighInButtonHeight),
+            signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.insets),
+            signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.insets),
+            signInButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.bottomInsets)
         ])
     }
 }

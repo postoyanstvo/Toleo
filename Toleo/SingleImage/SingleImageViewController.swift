@@ -23,9 +23,12 @@ final class SingleImageViewController: UIViewController {
     }
 
     private func setupView() {
-        view.addSubview(scrollView)
-        view.addSubview(imageView)
-        view.addSubview(sharedButton)
+        [scrollView,
+         imageView,
+         sharedButton].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+             view.addSubview($0)
+        }
         view.backgroundColor = .ypBlack
         sharedButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
         setImageZoomScale()
@@ -59,7 +62,6 @@ final class SingleImageViewController: UIViewController {
     }
     
     private func setupImage() {
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
@@ -72,7 +74,6 @@ final class SingleImageViewController: UIViewController {
     }
     
     private func setupScrollView() {
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -87,7 +88,6 @@ final class SingleImageViewController: UIViewController {
     }
     
     private func setupSharingButton() {
-        sharedButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             sharedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),

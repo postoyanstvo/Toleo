@@ -11,7 +11,7 @@ final class SplashViewController: UIViewController {
         .lightContent
     }
     
-    lazy var splashLogo: UIImageView = {
+    let splashLogo: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "Vector")

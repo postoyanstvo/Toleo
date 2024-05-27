@@ -141,7 +141,7 @@
 				488963872B30E70B00113C7D /* Models */,
 				488963842B284A2900113C7D /* Splash */,
 				4889637F2B23AC6300113C7D /* Services */,
-				488963732B1CA02900113C7D /* Auth */,
+				488963732B1CA02900113C7D /* OAuth */,
 				48F7669C2B09F90F00EBAF42 /* SingleImage */,
 				485C729D2B08FDCC00CB5044 /* Resources */,
 				481E7EC02B08D8B8008257A8 /* Profile */,
@@ -172,6 +172,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		4860CD002C0531B5002B3739 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				488963822B247B7E00113C7D /* OAuth2TokenStorage.swift */,
+				488963742B1CA04A00113C7D /* AuthViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		4860CD012C0531FC002B3739 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				488963762B1CA4E400113C7D /* WebViewViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		48892BD02BF3A048005F380D /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,14 +197,13 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		488963732B1CA02900113C7D /* Auth */ = {
+		488963732B1CA02900113C7D /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
-				488963742B1CA04A00113C7D /* AuthViewController.swift */,
-				488963762B1CA4E400113C7D /* WebViewViewController.swift */,
-				488963822B247B7E00113C7D /* OAuth2TokenStorage.swift */,
+				4860CD002C0531B5002B3739 /* Auth */,
+				4860CD012C0531FC002B3739 /* WebView */,
 			);
-			path = Auth;
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		4889637F2B23AC6300113C7D /* Services */ = {
