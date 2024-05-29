@@ -1,11 +1,12 @@
 import UIKit
 import ProgressHUD
 
-final class SplashViewController: UIViewController {
+final class SplashViewController: UIViewController, UITabBarControllerDelegate {
     private let oauth2Service = OAuth2Service()
     private let tokenStorage = OAuth2TokenStorage.shared
     private let profileService = ProfileService.shared
     private let profileImageService = ProfileImageService.shared
+    private let authConfiguration = AuthConfiguration.standard
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
@@ -38,7 +39,6 @@ final class SplashViewController: UIViewController {
             } else {
                 self.showAuthViewController()
             }
-            print("token")
         }
     }
     
@@ -58,20 +58,21 @@ final class SplashViewController: UIViewController {
 
 extension SplashViewController {
     private func switchToTabBarController() {
-        guard let window = UIApplication.shared.windows.first else {
-            fatalError("Invalid Configuration") }
-        let tabBarController = UIStoryboard(name: "Main", bundle: .main)
-            .instantiateViewController(identifier: "TabBarViewController")
-        window.rootViewController = tabBarController
-        print("bar")
+        let tabBarViewController = TabBarViewController()
+        tabBarViewController.delegate = self
+        
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = tabBarViewController
+            window.makeKeyAndVisible()
+            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {}, completion: nil)
+        }
     }
     
     private func showAuthViewController() {
-        let authViewController = OAuthViewController()
+        let authViewController = OAuthViewController(delegate: self, authConfiguration: authConfiguration)
         authViewController.delegate = self
         authViewController.modalPresentationStyle = .fullScreen
         present(authViewController, animated: true, completion: nil)
-        print("auth")
     }
 }
 

@@ -1,23 +1,27 @@
 import UIKit
  
-final class TabBarController: UITabBarController {
-       override func awakeFromNib() {
-           super.awakeFromNib()
-           let storyboard = UIStoryboard(name: "Main", bundle: .main)
-           
-           let imagesListViewController = storyboard.instantiateViewController(withIdentifier: "ImagesListViewController")
-           imagesListViewController.tabBarItem = UITabBarItem(
-               title: nil,
-               image: UIImage(named: "ActiveFeedTab"),
-               selectedImage: nil
-           )
-           let profileViewController = ProfileViewController()
-           profileViewController.tabBarItem = UITabBarItem(
-               title: nil,
-               image: UIImage(named: "ActiveProfileTab"),
-               selectedImage: nil
-           )
-           
-           self.viewControllers = [imagesListViewController, profileViewController]
-       }
-   }
+final class TabBarViewController: UITabBarController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tabBar.tintColor = UIColor.ypWhite
+        tabBar.barTintColor = UIColor.ypBlack
+        tabBar.backgroundColor = UIColor.ypBlack
+        tabBar.isTranslucent = false
+        
+        let imagesListVC = ImagesListViewController()
+        imagesListVC.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "square.stack"),
+            selectedImage: UIImage(systemName: "square.stack.fill")
+        )
+        
+        let profileVC = ProfileViewController()
+        profileVC.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "person.crop.circle"),
+            selectedImage: UIImage(systemName: "person.crop.circle"))
+        
+        viewControllers = [imagesListVC, profileVC]
+    }
+}

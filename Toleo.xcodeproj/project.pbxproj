@@ -18,9 +18,26 @@
 		48175B542B71872400440CDE /* ProfileImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48175B532B71872400440CDE /* ProfileImageService.swift */; };
 		481E7EC42B08DB7B008257A8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E7EC32B08DB7B008257A8 /* ProfileViewController.swift */; };
 		485C72A52B0900D100CB5044 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 485C72A42B0900D100CB5044 /* SF-Pro.ttf */; };
+		4860CD032C0535F6002B3739 /* WebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD022C0535F6002B3739 /* WebViewPresenter.swift */; };
+		4860CD052C053AE4002B3739 /* AuthHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD042C053AE4002B3739 /* AuthHelperProtocol.swift */; };
+		4860CD072C053B3F002B3739 /* AuthConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD062C053B3F002B3739 /* AuthConfiguration.swift */; };
+		4860CD092C067978002B3739 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD082C067978002B3739 /* AuthPresenter.swift */; };
+		4860CD0B2C067A02002B3739 /* AuthScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD0A2C067A02002B3739 /* AuthScreenModel.swift */; };
+		4860CD132C067D2C002B3739 /* WebViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD122C067D2C002B3739 /* WebViewTests.swift */; };
+		4860CD1C2C067F6A002B3739 /* WebViewPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD192C067E62002B3739 /* WebViewPresenterSpy.swift */; };
+		4860CD1F2C06800D002B3739 /* WebViewViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD1E2C06800D002B3739 /* WebViewViewControllerSpy.swift */; };
+		4860CD212C068E48002B3739 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD202C068E48002B3739 /* ProfilePresenter.swift */; };
+		4860CD3B2C069488002B3739 /* ProfileViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD292C06901C002B3739 /* ProfileViewTests.swift */; };
+		4860CD3F2C06949E002B3739 /* ProfileViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD302C069077002B3739 /* ProfileViewControllerSpy.swift */; };
+		4860CD402C0694AA002B3739 /* ProfilePresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD322C0690C9002B3739 /* ProfilePresenterSpy.swift */; };
+		4860CD432C069511002B3739 /* ImagesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD412C069509002B3739 /* ImagesListPresenter.swift */; };
+		4860CD562C06A60C002B3739 /* ImagesListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD4A2C06A3EE002B3739 /* ImagesListTests.swift */; };
+		4860CD592C06A635002B3739 /* ImagesListViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD512C06A44D002B3739 /* ImagesListViewControllerSpy.swift */; };
+		4860CD5A2C06A639002B3739 /* ImagesListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD532C06A486002B3739 /* ImagesListPresenterSpy.swift */; };
+		4860CD642C06A74D002B3739 /* ToleoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD632C06A74D002B3739 /* ToleoUITestsLaunchTests.swift */; };
+		4860CD6B2C06A7F6002B3739 /* ToleoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD612C06A74D002B3739 /* ToleoUITests.swift */; };
 		48892BCF2BF339B2005F380D /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 48892BCE2BF339B2005F380D /* SwiftKeychainWrapper */; };
 		48892BD22BF3A06C005F380D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48892BD12BF3A06C005F380D /* TabBarController.swift */; };
-		488963722B1A4E4300113C7D /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488963712B1A4E4300113C7D /* ApiConstants.swift */; };
 		488963752B1CA04A00113C7D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488963742B1CA04A00113C7D /* AuthViewController.swift */; };
 		488963772B1CA4E400113C7D /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488963762B1CA4E400113C7D /* WebViewViewController.swift */; };
 		488963812B23AC7700113C7D /* OAuth2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488963802B23AC7700113C7D /* OAuth2Service.swift */; };
@@ -46,6 +63,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4860CD142C067D2C002B3739 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4814B91F2AF4414E007B6C90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4814B9262AF4414E007B6C90;
+			remoteInfo = Toleo;
+		};
+		4860CD2B2C06901C002B3739 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4814B91F2AF4414E007B6C90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4814B9262AF4414E007B6C90;
+			remoteInfo = Toleo;
+		};
+		4860CD4C2C06A3EE002B3739 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4814B91F2AF4414E007B6C90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4814B9262AF4414E007B6C90;
+			remoteInfo = Toleo;
+		};
+		4860CD652C06A74D002B3739 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4814B91F2AF4414E007B6C90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4814B9262AF4414E007B6C90;
+			remoteInfo = Toleo;
+		};
 		48C0208C2BFA829100CE873D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4814B91F2AF4414E007B6C90 /* Project object */;
@@ -68,8 +113,29 @@
 		48175B532B71872400440CDE /* ProfileImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageService.swift; sourceTree = "<group>"; };
 		481E7EC32B08DB7B008257A8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		485C72A42B0900D100CB5044 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
+		4860CD022C0535F6002B3739 /* WebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPresenter.swift; sourceTree = "<group>"; };
+		4860CD042C053AE4002B3739 /* AuthHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelperProtocol.swift; sourceTree = "<group>"; };
+		4860CD062C053B3F002B3739 /* AuthConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfiguration.swift; sourceTree = "<group>"; };
+		4860CD082C067978002B3739 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		4860CD0A2C067A02002B3739 /* AuthScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenModel.swift; sourceTree = "<group>"; };
+		4860CD102C067D2C002B3739 /* Toleo Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toleo Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4860CD122C067D2C002B3739 /* WebViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewTests.swift; sourceTree = "<group>"; };
+		4860CD192C067E62002B3739 /* WebViewPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPresenterSpy.swift; sourceTree = "<group>"; };
+		4860CD1E2C06800D002B3739 /* WebViewViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewControllerSpy.swift; sourceTree = "<group>"; };
+		4860CD202C068E48002B3739 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		4860CD272C06901C002B3739 /* ProfileViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProfileViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4860CD292C06901C002B3739 /* ProfileViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTests.swift; sourceTree = "<group>"; };
+		4860CD302C069077002B3739 /* ProfileViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerSpy.swift; sourceTree = "<group>"; };
+		4860CD322C0690C9002B3739 /* ProfilePresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterSpy.swift; sourceTree = "<group>"; };
+		4860CD412C069509002B3739 /* ImagesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListPresenter.swift; sourceTree = "<group>"; };
+		4860CD482C06A3EE002B3739 /* ImagesListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagesListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4860CD4A2C06A3EE002B3739 /* ImagesListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListTests.swift; sourceTree = "<group>"; };
+		4860CD512C06A44D002B3739 /* ImagesListViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewControllerSpy.swift; sourceTree = "<group>"; };
+		4860CD532C06A486002B3739 /* ImagesListPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListPresenterSpy.swift; sourceTree = "<group>"; };
+		4860CD5F2C06A74D002B3739 /* ToleoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToleoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4860CD612C06A74D002B3739 /* ToleoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToleoUITests.swift; sourceTree = "<group>"; };
+		4860CD632C06A74D002B3739 /* ToleoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToleoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		48892BD12BF3A06C005F380D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		488963712B1A4E4300113C7D /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		488963742B1CA04A00113C7D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		488963762B1CA4E400113C7D /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		488963802B23AC7700113C7D /* OAuth2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Service.swift; sourceTree = "<group>"; };
@@ -105,6 +171,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4860CD0D2C067D2C002B3739 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4860CD242C06901C002B3739 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4860CD452C06A3EE002B3739 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4860CD5C2C06A74D002B3739 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48C020852BFA829100CE873D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -120,6 +214,10 @@
 			children = (
 				48C139022AF6717100B5E9BE /* .gitignore */,
 				4814B9292AF4414E007B6C90 /* Toleo */,
+				4860CD112C067D2C002B3739 /* ToleoTests */,
+				4860CD282C06901C002B3739 /* ProfileViewTests */,
+				4860CD492C06A3EE002B3739 /* ImagesListTests */,
+				4860CD602C06A74D002B3739 /* ToleoUITests */,
 				4814B9282AF4414E007B6C90 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,6 +227,10 @@
 			children = (
 				4814B9272AF4414E007B6C90 /* Toleo.app */,
 				48C020882BFA829100CE873D /* ToleoTests.xctest */,
+				4860CD102C067D2C002B3739 /* Toleo Tests.xctest */,
+				4860CD272C06901C002B3739 /* ProfileViewTests.xctest */,
+				4860CD482C06A3EE002B3739 /* ImagesListTests.xctest */,
+				4860CD5F2C06A74D002B3739 /* ToleoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				481E7EC32B08DB7B008257A8 /* ProfileViewController.swift */,
+				4860CD202C068E48002B3739 /* ProfilePresenter.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -177,6 +280,8 @@
 			children = (
 				488963822B247B7E00113C7D /* OAuth2TokenStorage.swift */,
 				488963742B1CA04A00113C7D /* AuthViewController.swift */,
+				4860CD082C067978002B3739 /* AuthPresenter.swift */,
+				4860CD0A2C067A02002B3739 /* AuthScreenModel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -185,8 +290,48 @@
 			isa = PBXGroup;
 			children = (
 				488963762B1CA4E400113C7D /* WebViewViewController.swift */,
+				4860CD022C0535F6002B3739 /* WebViewPresenter.swift */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		4860CD112C067D2C002B3739 /* ToleoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4860CD122C067D2C002B3739 /* WebViewTests.swift */,
+				4860CD192C067E62002B3739 /* WebViewPresenterSpy.swift */,
+				4860CD1E2C06800D002B3739 /* WebViewViewControllerSpy.swift */,
+			);
+			path = ToleoTests;
+			sourceTree = "<group>";
+		};
+		4860CD282C06901C002B3739 /* ProfileViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				4860CD292C06901C002B3739 /* ProfileViewTests.swift */,
+				4860CD302C069077002B3739 /* ProfileViewControllerSpy.swift */,
+				4860CD322C0690C9002B3739 /* ProfilePresenterSpy.swift */,
+			);
+			path = ProfileViewTests;
+			sourceTree = "<group>";
+		};
+		4860CD492C06A3EE002B3739 /* ImagesListTests */ = {
+			isa = PBXGroup;
+			children = (
+				4860CD4A2C06A3EE002B3739 /* ImagesListTests.swift */,
+				4860CD512C06A44D002B3739 /* ImagesListViewControllerSpy.swift */,
+				4860CD532C06A486002B3739 /* ImagesListPresenterSpy.swift */,
+			);
+			path = ImagesListTests;
+			sourceTree = "<group>";
+		};
+		4860CD602C06A74D002B3739 /* ToleoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4860CD612C06A74D002B3739 /* ToleoUITests.swift */,
+				4860CD632C06A74D002B3739 /* ToleoUITestsLaunchTests.swift */,
+			);
+			path = ToleoUITests;
 			sourceTree = "<group>";
 		};
 		48892BD02BF3A048005F380D /* TabBar */ = {
@@ -228,7 +373,6 @@
 		488963872B30E70B00113C7D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				488963712B1A4E4300113C7D /* ApiConstants.swift */,
 				488963882B30E75300113C7D /* OAuthTokenResponseBody.swift */,
 				4889638A2B30ECA900113C7D /* Constants.swift */,
 				4889638C2B30F02500113C7D /* NetworkError.swift */,
@@ -246,6 +390,7 @@
 			children = (
 				4814B92E2AF4414E007B6C90 /* ImagesListViewController.swift */,
 				48992ACE2AFBD9F500C48A5E /* ImagesListCell.swift */,
+				4860CD412C069509002B3739 /* ImagesListPresenter.swift */,
 			);
 			path = ImagesList;
 			sourceTree = "<group>";
@@ -257,6 +402,8 @@
 				48BFD1D92B5F0049007123AB /* URLExtensions.swift */,
 				481184652BF1E81700E3E298 /* AlertService.swift */,
 				48C020822BF88E7C00CE873D /* DateExtensions.swift */,
+				4860CD042C053AE4002B3739 /* AuthHelperProtocol.swift */,
+				4860CD062C053B3F002B3739 /* AuthConfiguration.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -294,6 +441,78 @@
 			productReference = 4814B9272AF4414E007B6C90 /* Toleo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4860CD0F2C067D2C002B3739 /* Toleo Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4860CD162C067D2C002B3739 /* Build configuration list for PBXNativeTarget "Toleo Tests" */;
+			buildPhases = (
+				4860CD0C2C067D2C002B3739 /* Sources */,
+				4860CD0D2C067D2C002B3739 /* Frameworks */,
+				4860CD0E2C067D2C002B3739 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4860CD152C067D2C002B3739 /* PBXTargetDependency */,
+			);
+			name = "Toleo Tests";
+			productName = "Toleo Tests";
+			productReference = 4860CD102C067D2C002B3739 /* Toleo Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4860CD262C06901C002B3739 /* ProfileViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4860CD2D2C06901C002B3739 /* Build configuration list for PBXNativeTarget "ProfileViewTests" */;
+			buildPhases = (
+				4860CD232C06901C002B3739 /* Sources */,
+				4860CD242C06901C002B3739 /* Frameworks */,
+				4860CD252C06901C002B3739 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4860CD2C2C06901C002B3739 /* PBXTargetDependency */,
+			);
+			name = ProfileViewTests;
+			productName = ProfileViewTests;
+			productReference = 4860CD272C06901C002B3739 /* ProfileViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4860CD472C06A3EE002B3739 /* ImagesListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4860CD4E2C06A3EE002B3739 /* Build configuration list for PBXNativeTarget "ImagesListTests" */;
+			buildPhases = (
+				4860CD442C06A3EE002B3739 /* Sources */,
+				4860CD452C06A3EE002B3739 /* Frameworks */,
+				4860CD462C06A3EE002B3739 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4860CD4D2C06A3EE002B3739 /* PBXTargetDependency */,
+			);
+			name = ImagesListTests;
+			productName = ImagesListTests;
+			productReference = 4860CD482C06A3EE002B3739 /* ImagesListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4860CD5E2C06A74D002B3739 /* ToleoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4860CD672C06A74D002B3739 /* Build configuration list for PBXNativeTarget "ToleoUITests" */;
+			buildPhases = (
+				4860CD5B2C06A74D002B3739 /* Sources */,
+				4860CD5C2C06A74D002B3739 /* Frameworks */,
+				4860CD5D2C06A74D002B3739 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4860CD662C06A74D002B3739 /* PBXTargetDependency */,
+			);
+			name = ToleoUITests;
+			productName = ToleoUITests;
+			productReference = 4860CD5F2C06A74D002B3739 /* ToleoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		48C020872BFA829100CE873D /* ToleoTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48C0208E2BFA829100CE873D /* Build configuration list for PBXNativeTarget "ToleoTests" */;
@@ -325,6 +544,22 @@
 					4814B9262AF4414E007B6C90 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
+					4860CD0F2C067D2C002B3739 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4814B9262AF4414E007B6C90;
+					};
+					4860CD262C06901C002B3739 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4814B9262AF4414E007B6C90;
+					};
+					4860CD472C06A3EE002B3739 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4814B9262AF4414E007B6C90;
+					};
+					4860CD5E2C06A74D002B3739 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 4814B9262AF4414E007B6C90;
+					};
 					48C020872BFA829100CE873D = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 4814B9262AF4414E007B6C90;
@@ -351,6 +586,10 @@
 			targets = (
 				4814B9262AF4414E007B6C90 /* Toleo */,
 				48C020872BFA829100CE873D /* ToleoTests */,
+				4860CD0F2C067D2C002B3739 /* Toleo Tests */,
+				4860CD262C06901C002B3739 /* ProfileViewTests */,
+				4860CD472C06A3EE002B3739 /* ImagesListTests */,
+				4860CD5E2C06A74D002B3739 /* ToleoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +607,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4860CD0E2C067D2C002B3739 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4860CD252C06901C002B3739 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4860CD462C06A3EE002B3739 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4860CD5D2C06A74D002B3739 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48C020862BFA829100CE873D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,8 +649,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4860CD092C067978002B3739 /* AuthPresenter.swift in Sources */,
 				481184662BF1E81700E3E298 /* AlertService.swift in Sources */,
 				48F7669E2B09F93B00EBAF42 /* SingleImageViewController.swift in Sources */,
+				4860CD212C068E48002B3739 /* ProfilePresenter.swift in Sources */,
 				4814B92F2AF4414E007B6C90 /* ImagesListViewController.swift in Sources */,
 				48992ACF2AFBD9F500C48A5E /* ImagesListCell.swift in Sources */,
 				488963922B36224B00113C7D /* UIBlockingProgressHUD.swift in Sources */,
@@ -399,17 +668,60 @@
 				488963752B1CA04A00113C7D /* AuthViewController.swift in Sources */,
 				48C0207A2BF8021500CE873D /* ImagesListService.swift in Sources */,
 				4889638D2B30F02500113C7D /* NetworkError.swift in Sources */,
-				488963722B1A4E4300113C7D /* ApiConstants.swift in Sources */,
 				4814B92B2AF4414E007B6C90 /* AppDelegate.swift in Sources */,
+				4860CD0B2C067A02002B3739 /* AuthScreenModel.swift in Sources */,
+				4860CD1F2C06800D002B3739 /* WebViewViewControllerSpy.swift in Sources */,
 				4889638B2B30ECA900113C7D /* Constants.swift in Sources */,
 				48175B542B71872400440CDE /* ProfileImageService.swift in Sources */,
 				48C020832BF88E7C00CE873D /* DateExtensions.swift in Sources */,
+				4860CD1C2C067F6A002B3739 /* WebViewPresenterSpy.swift in Sources */,
+				4860CD072C053B3F002B3739 /* AuthConfiguration.swift in Sources */,
+				4860CD032C0535F6002B3739 /* WebViewPresenter.swift in Sources */,
+				4860CD052C053AE4002B3739 /* AuthHelperProtocol.swift in Sources */,
 				488963772B1CA4E400113C7D /* WebViewViewController.swift in Sources */,
 				48C0207E2BF880E800CE873D /* PhotoResult.swift in Sources */,
 				48CD7D922B380D91000B0622 /* Profile.swift in Sources */,
 				48BFD1DA2B5F0049007123AB /* URLExtensions.swift in Sources */,
 				48CD7D902B380A9B000B0622 /* ProfileResult.swift in Sources */,
+				4860CD432C069511002B3739 /* ImagesListPresenter.swift in Sources */,
 				4814B92D2AF4414E007B6C90 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4860CD0C2C067D2C002B3739 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4860CD3B2C069488002B3739 /* ProfileViewTests.swift in Sources */,
+				4860CD6B2C06A7F6002B3739 /* ToleoUITests.swift in Sources */,
+				4860CD5A2C06A639002B3739 /* ImagesListPresenterSpy.swift in Sources */,
+				4860CD592C06A635002B3739 /* ImagesListViewControllerSpy.swift in Sources */,
+				4860CD402C0694AA002B3739 /* ProfilePresenterSpy.swift in Sources */,
+				4860CD132C067D2C002B3739 /* WebViewTests.swift in Sources */,
+				4860CD3F2C06949E002B3739 /* ProfileViewControllerSpy.swift in Sources */,
+				4860CD562C06A60C002B3739 /* ImagesListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4860CD232C06901C002B3739 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4860CD442C06A3EE002B3739 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4860CD5B2C06A74D002B3739 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4860CD642C06A74D002B3739 /* ToleoUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +735,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4860CD152C067D2C002B3739 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4814B9262AF4414E007B6C90 /* Toleo */;
+			targetProxy = 4860CD142C067D2C002B3739 /* PBXContainerItemProxy */;
+		};
+		4860CD2C2C06901C002B3739 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4814B9262AF4414E007B6C90 /* Toleo */;
+			targetProxy = 4860CD2B2C06901C002B3739 /* PBXContainerItemProxy */;
+		};
+		4860CD4D2C06A3EE002B3739 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4814B9262AF4414E007B6C90 /* Toleo */;
+			targetProxy = 4860CD4C2C06A3EE002B3739 /* PBXContainerItemProxy */;
+		};
+		4860CD662C06A74D002B3739 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4814B9262AF4414E007B6C90 /* Toleo */;
+			targetProxy = 4860CD652C06A74D002B3739 /* PBXContainerItemProxy */;
+		};
 		48C0208D2BFA829100CE873D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4814B9262AF4414E007B6C90 /* Toleo */;
@@ -633,6 +965,156 @@
 			};
 			name = Release;
 		};
+		4860CD172C067D2C002B3739 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUB6FU39JB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.postoyanstvo.Toleo-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
+			};
+			name = Debug;
+		};
+		4860CD182C067D2C002B3739 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUB6FU39JB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.postoyanstvo.Toleo-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
+			};
+			name = Release;
+		};
+		4860CD2E2C06901C002B3739 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUB6FU39JB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ProfileViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
+			};
+			name = Debug;
+		};
+		4860CD2F2C06901C002B3739 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUB6FU39JB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ProfileViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
+			};
+			name = Release;
+		};
+		4860CD4F2C06A3EE002B3739 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUB6FU39JB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ImagesListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
+			};
+			name = Debug;
+		};
+		4860CD502C06A3EE002B3739 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUB6FU39JB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ImagesListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
+			};
+			name = Release;
+		};
+		4860CD682C06A74D002B3739 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUB6FU39JB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ToleoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Toleo;
+			};
+			name = Debug;
+		};
+		4860CD692C06A74D002B3739 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUB6FU39JB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ToleoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Toleo;
+			};
+			name = Release;
+		};
 		48C0208F2BFA829100CE873D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -688,6 +1170,42 @@
 			buildConfigurations = (
 				4814B93C2AF4414F007B6C90 /* Debug */,
 				4814B93D2AF4414F007B6C90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4860CD162C067D2C002B3739 /* Build configuration list for PBXNativeTarget "Toleo Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4860CD172C067D2C002B3739 /* Debug */,
+				4860CD182C067D2C002B3739 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4860CD2D2C06901C002B3739 /* Build configuration list for PBXNativeTarget "ProfileViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4860CD2E2C06901C002B3739 /* Debug */,
+				4860CD2F2C06901C002B3739 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4860CD4E2C06A3EE002B3739 /* Build configuration list for PBXNativeTarget "ImagesListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4860CD4F2C06A3EE002B3739 /* Debug */,
+				4860CD502C06A3EE002B3739 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4860CD672C06A74D002B3739 /* Build configuration list for PBXNativeTarget "ToleoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4860CD682C06A74D002B3739 /* Debug */,
+				4860CD692C06A74D002B3739 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
