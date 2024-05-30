@@ -7,13 +7,11 @@ final class SingleImageViewController: UIViewController {
     private let imageView: UIImageView = {
         let photoView = UIImageView()
         photoView.contentMode = .scaleAspectFill
-        
         return photoView
     }()
     private let sharedButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "Share"), for: .normal)
-        
         return button
     }()
     
@@ -23,12 +21,14 @@ final class SingleImageViewController: UIViewController {
     }
 
     private func setupView() {
-        [scrollView,
-         imageView,
-         sharedButton].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-             view.addSubview($0)
-        }
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        sharedButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(scrollView)
+        scrollView.addSubview(imageView)
+        view.addSubview(sharedButton)
+        
         view.backgroundColor = .ypBlack
         sharedButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
         setImageZoomScale()
@@ -62,7 +62,6 @@ final class SingleImageViewController: UIViewController {
     }
     
     private func setupImage() {
-        
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
@@ -74,7 +73,6 @@ final class SingleImageViewController: UIViewController {
     }
     
     private func setupScrollView() {
-        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -88,7 +86,6 @@ final class SingleImageViewController: UIViewController {
     }
     
     private func setupSharingButton() {
-        
         NSLayoutConstraint.activate([
             sharedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             sharedButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -17),

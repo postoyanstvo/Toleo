@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 enum ApiConstants {
     static let accessKey: String = "5QWF5THq5Vq4vhdy0EONQ-UIBHDzbzY6r_fhXyyLdwY"

@@ -1,9 +1,9 @@
 import UIKit
 import Kingfisher
 
-final class ImagesListViewController: UIViewController {
+final class ImagesListViewController: UIViewController, ImagesListViewProtocol {
+    var presenter: ImagesListPresenterProtocol?
     private var photos: [Photo] = []
-    private let imagesListService = ImagesListService()
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -13,19 +13,50 @@ final class ImagesListViewController: UIViewController {
         return formatter
     }()
     
-    @IBOutlet private weak var tableView: UITableView!
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: CGRect.zero, style: .grouped)
+        tableView.backgroundColor = .ypBlack
+        tableView.separatorStyle = .none
+        return tableView
+    }()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let presenter = presenter else {
+            print("Presenter is nil")
+            return
+        }
+        
+        let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
+        if !testMode {
+            presenter.fetchPhotosNextPage()
+        }
+        presenter.addImageListObserver()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = ImagesListPresenter(view: self)
         configureTableView()
-        addImageListObserver()
-        imagesListService.fetchPhotosNextPage()
     }
     
     private func configureTableView() {
+        view.addSubview(tableView)
+        view.backgroundColor = .ypBlack
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .ypBlack
+        tableView.register(ImagesListCell.self, forCellReuseIdentifier: ImagesListCell.reuseIdentifier)
     }
     
     private func addImageListObserver() {
@@ -41,10 +72,10 @@ final class ImagesListViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    private func updateTableViewAnimated() {
+    internal func updateTableViewAnimated() {
         let oldCount = photos.count
-        let newCount = imagesListService.photos.count
-        photos = imagesListService.photos
+        let newCount = ImagesListService.shared.photos.count
+        photos = ImagesListService.shared.photos
         
         tableView.performBatchUpdates {
             let indexPaths = (oldCount..<newCount).map { IndexPath(row: $0, section: 0) }
@@ -56,6 +87,7 @@ final class ImagesListViewController: UIViewController {
         let photo = photos[indexPath.row]
         cell.configure(with: photo, dateFormatter: dateFormatter)
         cell.delegate = self
+        cell.selectionStyle = .none
     }
 }
 
@@ -86,7 +118,7 @@ extension ImagesListViewController: UITableViewDataSource {
 
 extension ImagesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showSingleImageViewController(with: photos[indexPath.row])
+        showSingleImageViewController(with: ImagesListService.shared.photos[indexPath.row])
     }
     
     private func showSingleImageViewController(with photo: Photo) {
@@ -98,10 +130,20 @@ extension ImagesListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastElement = imagesListService.photos.count - 1
-        if indexPath.row == lastElement {
-            imagesListService.fetchPhotosNextPage()
+        let lastElement = ImagesListService.shared.photos.count - 1
+        guard let presenter = presenter else {
+            print("Presenter is nil")
+            return
         }
+        if indexPath.row == lastElement {
+            presenter.fetchPhotosNextPage()
+        }
+        
+        let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
+        if !testMode && indexPath.row == lastElement {
+            presenter.fetchPhotosNextPage()
+        }
+
     }
 }
 
@@ -112,7 +154,7 @@ extension ImagesListViewController: ImagesListCellDelegate {
         let isLike = !photo.isLiked
         
         UIBlockingProgressHUD.show()
-        imagesListService.changeLike(photoId: photo.id, isLike: isLike) { [weak self] result in
+        ImagesListService.shared.changeLike(photoId: photo.id, isLike: isLike) { [weak self] result in
             switch result {
             case .success():
                 self?.photos[indexPath.row].isLiked = isLike
@@ -124,4 +166,8 @@ extension ImagesListViewController: ImagesListCellDelegate {
             }
         }
     }
+}
+
+protocol ImagesListViewProtocol: AnyObject {
+    func updateTableViewAnimated()
 }

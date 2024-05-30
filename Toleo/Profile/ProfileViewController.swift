@@ -2,10 +2,7 @@ import UIKit
 import Kingfisher
 import WebKit
 
-final class ProfileViewController: UIViewController {
-    
-    //MARK: - Properties
-    
+final class ProfileViewController: UIViewController, ProfileViewControllerProtocol{
     private let profileService = ProfileService.shared
     private let tokenStorage = OAuth2TokenStorage.shared
     private let profileImageService = ProfileImageService.shared
@@ -13,6 +10,8 @@ final class ProfileViewController: UIViewController {
     
     private var animationLayers = Set<CALayer>()
     private var gradientLayer: CAGradientLayer?
+    
+    var presenter: ProfilePresenterProtocol?
     
     private let avatarImageView: UIImageView = {
         let avatarImage = UIImage(named: "EmpthyProfilePhoto")
@@ -54,7 +53,6 @@ final class ProfileViewController: UIViewController {
         return logoutButton
     } ()
     
-    //MARK: - Lifecicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,12 +65,12 @@ final class ProfileViewController: UIViewController {
         setupLogoutButton()
         addGradientLayer()
         addGradientToLabels()
-        fetchUserProfile()
+        presenter = ProfilePresenter(view: self)
+        presenter?.fetchUserProfile()
         addProfileImageServiceObserver()
         logoutButton.addTarget(self, action: #selector(didTapLogoutButton), for: .touchUpInside)
     }
     
-    //MARK: - Functions
     
     private func setupAvatarImageView() {
         view.addSubview(avatarImageView)
@@ -176,7 +174,7 @@ final class ProfileViewController: UIViewController {
         }
     }
     
-    private func updateUIWithProfile(_ profile: Profile) {
+    func updateUIWithProfile(_ profile: Profile) {
         nameLabel.text = profile.name
         loginLabel.text = profile.loginName
         descriptionLabel.text = profile.bio
@@ -201,7 +199,7 @@ final class ProfileViewController: UIViewController {
         }
     }
     
-    private func fetchProfileImageURL(for username: String) {
+    func fetchProfileImageURL(for username: String) {
         profileImageService.fetchProfileImageURL(username: username) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -241,7 +239,7 @@ final class ProfileViewController: UIViewController {
         avatarImageView.layer.insertSublayer(gradient, at: 0)
     }
     
-    private func addGradientToLabels() {
+    func addGradientToLabels() {
         [nameLabel, loginLabel, descriptionLabel].forEach { label in
             let gradient = createGradientLayer()
             label.layer.insertSublayer(gradient, at: 0)
@@ -254,9 +252,28 @@ final class ProfileViewController: UIViewController {
         gradientLayer = nil
     }
     
-    private func removeGradientsFromLabels() {
+    func removeGradientsFromLabels() {
         animationLayers.forEach { $0.removeFromSuperlayer() }
         animationLayers.removeAll()
+    }
+    
+    func updateAvatar(url: URL) {
+        avatarImageView.kf.setImage(with: url) { [weak self] result in
+            switch result {
+            case .success(_):
+                self?.removeGradientLayer()
+            case .failure(_):
+                break
+            }
+        }
+    }
+    
+    func showError(title: String, message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
     }
     
     private func createGradientLayer() -> CAGradientLayer {
@@ -292,4 +309,13 @@ final class ProfileViewController: UIViewController {
             gradientLayer?.frame = label.bounds
         }
     }
+}
+
+protocol ProfileViewControllerProtocol: AnyObject {
+    var presenter: ProfilePresenterProtocol? { get set }
+    func updateAvatar(url: URL)
+    func updateUIWithProfile(_ profile: Profile)
+    func addGradientToLabels()
+    func removeGradientsFromLabels()
+    func showError(title: String, message: String)
 }
