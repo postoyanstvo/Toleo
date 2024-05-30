@@ -1,7 +1,7 @@
 import XCTest
 @testable import Toleo
 
-class ImagesListPresenterSpy: ImagesListPresenterProtocol {
+final class ImagesListPresenterSpy: ImagesListPresenterProtocol {
     weak var view: ImagesListViewProtocol?
     var fetchPhotosNextPageCalled = false
     var addImageListObserverCalled = false

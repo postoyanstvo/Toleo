@@ -199,7 +199,7 @@ final class ProfileViewController: UIViewController, ProfileViewControllerProtoc
         }
     }
     
-    private func fetchProfileImageURL(for username: String) {
+    func fetchProfileImageURL(for username: String) {
         profileImageService.fetchProfileImageURL(username: username) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {

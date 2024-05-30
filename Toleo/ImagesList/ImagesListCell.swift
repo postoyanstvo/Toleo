@@ -118,7 +118,7 @@ final class ImagesListCell: UITableViewCell {
             dateLabel.leadingAnchor.constraint(equalTo: cellImage.leadingAnchor, constant: Constants.insets),
             dateLabel.trailingAnchor.constraint(equalTo: cellImage.trailingAnchor, constant: -Constants.insets),
             dateLabel.bottomAnchor.constraint(equalTo: cellImage.bottomAnchor, constant: -Constants.insets),
-            dateLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)
+            //dateLabel.widthAnchor.constraint(equalToConstant: Constants.labelWidth)
         ])
     }
     

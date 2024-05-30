@@ -10,11 +10,11 @@ final class OAuthViewController: UIViewController {
     }
 
     weak var delegate: OAuthViewControllerDelegate?
-    var presenter: AuthPresenter?
+    private var presenter: AuthPresenter?
     
     private var logoImageView = UIImageView()
     
-    private lazy var signInButton: UIButton = {
+    private var signInButton: UIButton = {
         let button = UIButton()
         button.clipsToBounds = true
         button.layer.cornerRadius = Constants.cornerRadius
@@ -59,6 +59,8 @@ final class OAuthViewController: UIViewController {
         signInButton.setTitleColor(screenModel.backgroundColor, for: .normal)
         signInButton.titleLabel?.font = screenModel.font
         signInButton.addTarget(self, action: #selector(signInButtonClicked), for: .touchUpInside)
+        signInButton.accessibilityIdentifier = "Authenticate"
+        signInButton.isAccessibilityElement = true
     }
     
     @objc private func signInButtonClicked() {
@@ -66,8 +68,8 @@ final class OAuthViewController: UIViewController {
     }
     
     private func configureConstraints() {
-        setupSignInButtonConstraints()
         setupLogoConstraints()
+        setupSignInButtonConstraints()
     }
     
     private func configureSubviews() {

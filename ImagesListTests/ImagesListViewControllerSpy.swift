@@ -1,7 +1,7 @@
 import XCTest
 @testable import Toleo
 
-class ImagesListViewControllerSpy: ImagesListViewProtocol {
+final class ImagesListViewControllerSpy: ImagesListViewProtocol {
     var presenter: ImagesListPresenterProtocol?
     var updateTableViewAnimatedCalled = false
 

@@ -2,7 +2,7 @@ import UIKit
 import Kingfisher
 
 final class ImagesListViewController: UIViewController, ImagesListViewProtocol {
-    var presenter: ImagesListPresenterProtocol!
+    var presenter: ImagesListPresenterProtocol?
     private var photos: [Photo] = []
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -22,7 +22,15 @@ final class ImagesListViewController: UIViewController, ImagesListViewProtocol {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.fetchPhotosNextPage()
+        guard let presenter = presenter else {
+            print("Presenter is nil")
+            return
+        }
+        
+        let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
+        if !testMode {
+            presenter.fetchPhotosNextPage()
+        }
         presenter.addImageListObserver()
     }
     
@@ -123,9 +131,19 @@ extension ImagesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastElement = ImagesListService.shared.photos.count - 1
+        guard let presenter = presenter else {
+            print("Presenter is nil")
+            return
+        }
         if indexPath.row == lastElement {
             presenter.fetchPhotosNextPage()
         }
+        
+        let testMode = ProcessInfo.processInfo.arguments.contains("testMode")
+        if !testMode && indexPath.row == lastElement {
+            presenter.fetchPhotosNextPage()
+        }
+
     }
 }
 

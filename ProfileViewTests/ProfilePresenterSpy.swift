@@ -1,7 +1,7 @@
 import Foundation
 @testable import Toleo
 
-class ProfilePresenterSpy: ProfilePresenterProtocol {
+final class ProfilePresenterSpy: ProfilePresenterProtocol {
     weak var view: ProfileViewControllerProtocol?
 
     // Variables to capture calls

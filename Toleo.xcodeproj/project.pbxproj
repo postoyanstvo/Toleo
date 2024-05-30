@@ -34,8 +34,8 @@
 		4860CD562C06A60C002B3739 /* ImagesListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD4A2C06A3EE002B3739 /* ImagesListTests.swift */; };
 		4860CD592C06A635002B3739 /* ImagesListViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD512C06A44D002B3739 /* ImagesListViewControllerSpy.swift */; };
 		4860CD5A2C06A639002B3739 /* ImagesListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD532C06A486002B3739 /* ImagesListPresenterSpy.swift */; };
-		4860CD642C06A74D002B3739 /* ToleoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD632C06A74D002B3739 /* ToleoUITestsLaunchTests.swift */; };
-		4860CD6B2C06A7F6002B3739 /* ToleoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD612C06A74D002B3739 /* ToleoUITests.swift */; };
+		4860CD6D2C0792D8002B3739 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD6C2C0792D8002B3739 /* ApiConstants.swift */; };
+		4860CD792C07A53D002B3739 /* ToleoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860CD612C06A74D002B3739 /* ToleoUITests.swift */; };
 		48892BCF2BF339B2005F380D /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 48892BCE2BF339B2005F380D /* SwiftKeychainWrapper */; };
 		48892BD22BF3A06C005F380D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48892BD12BF3A06C005F380D /* TabBarController.swift */; };
 		488963752B1CA04A00113C7D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488963742B1CA04A00113C7D /* AuthViewController.swift */; };
@@ -70,28 +70,7 @@
 			remoteGlobalIDString = 4814B9262AF4414E007B6C90;
 			remoteInfo = Toleo;
 		};
-		4860CD2B2C06901C002B3739 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4814B91F2AF4414E007B6C90 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4814B9262AF4414E007B6C90;
-			remoteInfo = Toleo;
-		};
-		4860CD4C2C06A3EE002B3739 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4814B91F2AF4414E007B6C90 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4814B9262AF4414E007B6C90;
-			remoteInfo = Toleo;
-		};
 		4860CD652C06A74D002B3739 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4814B91F2AF4414E007B6C90 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4814B9262AF4414E007B6C90;
-			remoteInfo = Toleo;
-		};
-		48C0208C2BFA829100CE873D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4814B91F2AF4414E007B6C90 /* Project object */;
 			proxyType = 1;
@@ -123,18 +102,16 @@
 		4860CD192C067E62002B3739 /* WebViewPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPresenterSpy.swift; sourceTree = "<group>"; };
 		4860CD1E2C06800D002B3739 /* WebViewViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewControllerSpy.swift; sourceTree = "<group>"; };
 		4860CD202C068E48002B3739 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
-		4860CD272C06901C002B3739 /* ProfileViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProfileViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4860CD292C06901C002B3739 /* ProfileViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTests.swift; sourceTree = "<group>"; };
 		4860CD302C069077002B3739 /* ProfileViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerSpy.swift; sourceTree = "<group>"; };
 		4860CD322C0690C9002B3739 /* ProfilePresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterSpy.swift; sourceTree = "<group>"; };
 		4860CD412C069509002B3739 /* ImagesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListPresenter.swift; sourceTree = "<group>"; };
-		4860CD482C06A3EE002B3739 /* ImagesListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagesListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4860CD4A2C06A3EE002B3739 /* ImagesListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListTests.swift; sourceTree = "<group>"; };
 		4860CD512C06A44D002B3739 /* ImagesListViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewControllerSpy.swift; sourceTree = "<group>"; };
 		4860CD532C06A486002B3739 /* ImagesListPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListPresenterSpy.swift; sourceTree = "<group>"; };
 		4860CD5F2C06A74D002B3739 /* ToleoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToleoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4860CD612C06A74D002B3739 /* ToleoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToleoUITests.swift; sourceTree = "<group>"; };
-		4860CD632C06A74D002B3739 /* ToleoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToleoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4860CD6C2C0792D8002B3739 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		48892BD12BF3A06C005F380D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		488963742B1CA04A00113C7D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		488963762B1CA4E400113C7D /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
@@ -152,7 +129,6 @@
 		48C0207D2BF880E800CE873D /* PhotoResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResult.swift; sourceTree = "<group>"; };
 		48C0207F2BF881BE00CE873D /* UrlsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlsResult.swift; sourceTree = "<group>"; };
 		48C020822BF88E7C00CE873D /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
-		48C020882BFA829100CE873D /* ToleoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToleoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C139022AF6717100B5E9BE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		48CD7D8D2B380A1C000B0622 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		48CD7D8F2B380A9B000B0622 /* ProfileResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResult.swift; sourceTree = "<group>"; };
@@ -178,28 +154,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4860CD242C06901C002B3739 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4860CD452C06A3EE002B3739 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4860CD5C2C06A74D002B3739 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		48C020852BFA829100CE873D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,10 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				4814B9272AF4414E007B6C90 /* Toleo.app */,
-				48C020882BFA829100CE873D /* ToleoTests.xctest */,
 				4860CD102C067D2C002B3739 /* Toleo Tests.xctest */,
-				4860CD272C06901C002B3739 /* ProfileViewTests.xctest */,
-				4860CD482C06A3EE002B3739 /* ImagesListTests.xctest */,
 				4860CD5F2C06A74D002B3739 /* ToleoUITests.xctest */,
 			);
 			name = Products;
@@ -329,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				4860CD612C06A74D002B3739 /* ToleoUITests.swift */,
-				4860CD632C06A74D002B3739 /* ToleoUITestsLaunchTests.swift */,
 			);
 			path = ToleoUITests;
 			sourceTree = "<group>";
@@ -404,6 +355,7 @@
 				48C020822BF88E7C00CE873D /* DateExtensions.swift */,
 				4860CD042C053AE4002B3739 /* AuthHelperProtocol.swift */,
 				4860CD062C053B3F002B3739 /* AuthConfiguration.swift */,
+				4860CD6C2C0792D8002B3739 /* ApiConstants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -459,42 +411,6 @@
 			productReference = 4860CD102C067D2C002B3739 /* Toleo Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4860CD262C06901C002B3739 /* ProfileViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4860CD2D2C06901C002B3739 /* Build configuration list for PBXNativeTarget "ProfileViewTests" */;
-			buildPhases = (
-				4860CD232C06901C002B3739 /* Sources */,
-				4860CD242C06901C002B3739 /* Frameworks */,
-				4860CD252C06901C002B3739 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4860CD2C2C06901C002B3739 /* PBXTargetDependency */,
-			);
-			name = ProfileViewTests;
-			productName = ProfileViewTests;
-			productReference = 4860CD272C06901C002B3739 /* ProfileViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		4860CD472C06A3EE002B3739 /* ImagesListTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4860CD4E2C06A3EE002B3739 /* Build configuration list for PBXNativeTarget "ImagesListTests" */;
-			buildPhases = (
-				4860CD442C06A3EE002B3739 /* Sources */,
-				4860CD452C06A3EE002B3739 /* Frameworks */,
-				4860CD462C06A3EE002B3739 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4860CD4D2C06A3EE002B3739 /* PBXTargetDependency */,
-			);
-			name = ImagesListTests;
-			productName = ImagesListTests;
-			productReference = 4860CD482C06A3EE002B3739 /* ImagesListTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		4860CD5E2C06A74D002B3739 /* ToleoUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4860CD672C06A74D002B3739 /* Build configuration list for PBXNativeTarget "ToleoUITests" */;
@@ -513,24 +429,6 @@
 			productReference = 4860CD5F2C06A74D002B3739 /* ToleoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		48C020872BFA829100CE873D /* ToleoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 48C0208E2BFA829100CE873D /* Build configuration list for PBXNativeTarget "ToleoTests" */;
-			buildPhases = (
-				48C020842BFA829100CE873D /* Sources */,
-				48C020852BFA829100CE873D /* Frameworks */,
-				48C020862BFA829100CE873D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				48C0208D2BFA829100CE873D /* PBXTargetDependency */,
-			);
-			name = ToleoTests;
-			productName = ToleoTests;
-			productReference = 48C020882BFA829100CE873D /* ToleoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -548,19 +446,7 @@
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 4814B9262AF4414E007B6C90;
 					};
-					4860CD262C06901C002B3739 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 4814B9262AF4414E007B6C90;
-					};
-					4860CD472C06A3EE002B3739 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 4814B9262AF4414E007B6C90;
-					};
 					4860CD5E2C06A74D002B3739 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 4814B9262AF4414E007B6C90;
-					};
-					48C020872BFA829100CE873D = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 4814B9262AF4414E007B6C90;
 					};
@@ -585,10 +471,7 @@
 			projectRoot = "";
 			targets = (
 				4814B9262AF4414E007B6C90 /* Toleo */,
-				48C020872BFA829100CE873D /* ToleoTests */,
 				4860CD0F2C067D2C002B3739 /* Toleo Tests */,
-				4860CD262C06901C002B3739 /* ProfileViewTests */,
-				4860CD472C06A3EE002B3739 /* ImagesListTests */,
 				4860CD5E2C06A74D002B3739 /* ToleoUITests */,
 			);
 		};
@@ -614,28 +497,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4860CD252C06901C002B3739 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4860CD462C06A3EE002B3739 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4860CD5D2C06A74D002B3739 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		48C020862BFA829100CE873D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -657,6 +519,7 @@
 				48992ACF2AFBD9F500C48A5E /* ImagesListCell.swift in Sources */,
 				488963922B36224B00113C7D /* UIBlockingProgressHUD.swift in Sources */,
 				48892BD22BF3A06C005F380D /* TabBarController.swift in Sources */,
+				4860CD6D2C0792D8002B3739 /* ApiConstants.swift in Sources */,
 				48C020802BF881BE00CE873D /* UrlsResult.swift in Sources */,
 				488963862B284A5300113C7D /* SplashViewController.swift in Sources */,
 				481E7EC42B08DB7B008257A8 /* ProfileViewController.swift in Sources */,
@@ -693,7 +556,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4860CD3B2C069488002B3739 /* ProfileViewTests.swift in Sources */,
-				4860CD6B2C06A7F6002B3739 /* ToleoUITests.swift in Sources */,
 				4860CD5A2C06A639002B3739 /* ImagesListPresenterSpy.swift in Sources */,
 				4860CD592C06A635002B3739 /* ImagesListViewControllerSpy.swift in Sources */,
 				4860CD402C0694AA002B3739 /* ProfilePresenterSpy.swift in Sources */,
@@ -703,32 +565,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4860CD232C06901C002B3739 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4860CD442C06A3EE002B3739 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4860CD5B2C06A74D002B3739 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4860CD642C06A74D002B3739 /* ToleoUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		48C020842BFA829100CE873D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				4860CD792C07A53D002B3739 /* ToleoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,25 +581,10 @@
 			target = 4814B9262AF4414E007B6C90 /* Toleo */;
 			targetProxy = 4860CD142C067D2C002B3739 /* PBXContainerItemProxy */;
 		};
-		4860CD2C2C06901C002B3739 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4814B9262AF4414E007B6C90 /* Toleo */;
-			targetProxy = 4860CD2B2C06901C002B3739 /* PBXContainerItemProxy */;
-		};
-		4860CD4D2C06A3EE002B3739 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4814B9262AF4414E007B6C90 /* Toleo */;
-			targetProxy = 4860CD4C2C06A3EE002B3739 /* PBXContainerItemProxy */;
-		};
 		4860CD662C06A74D002B3739 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4814B9262AF4414E007B6C90 /* Toleo */;
 			targetProxy = 4860CD652C06A74D002B3739 /* PBXContainerItemProxy */;
-		};
-		48C0208D2BFA829100CE873D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4814B9262AF4414E007B6C90 /* Toleo */;
-			targetProxy = 48C0208C2BFA829100CE873D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -913,7 +739,6 @@
 				INFOPLIST_FILE = Toleo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -927,6 +752,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -945,7 +771,6 @@
 				INFOPLIST_FILE = Toleo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -959,6 +784,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -973,13 +799,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WUB6FU39JB;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.postoyanstvo.Toleo-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
 			};
 			name = Debug;
@@ -992,89 +822,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WUB6FU39JB;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.postoyanstvo.Toleo-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
-			};
-			name = Release;
-		};
-		4860CD2E2C06901C002B3739 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WUB6FU39JB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ProfileViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
-			};
-			name = Debug;
-		};
-		4860CD2F2C06901C002B3739 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WUB6FU39JB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ProfileViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
-			};
-			name = Release;
-		};
-		4860CD4F2C06A3EE002B3739 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WUB6FU39JB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ImagesListTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
-			};
-			name = Debug;
-		};
-		4860CD502C06A3EE002B3739 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WUB6FU39JB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ImagesListTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
 			};
 			name = Release;
@@ -1086,13 +844,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WUB6FU39JB;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ToleoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = Toleo;
 			};
 			name = Debug;
@@ -1104,52 +866,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WUB6FU39JB;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ToleoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = Toleo;
-			};
-			name = Release;
-		};
-		48C0208F2BFA829100CE873D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WUB6FU39JB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ToleoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
-			};
-			name = Debug;
-		};
-		48C020902BFA829100CE873D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WUB6FU39JB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.postoyanstvo.ToleoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toleo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Toleo";
 			};
 			name = Release;
 		};
@@ -1183,38 +911,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4860CD2D2C06901C002B3739 /* Build configuration list for PBXNativeTarget "ProfileViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4860CD2E2C06901C002B3739 /* Debug */,
-				4860CD2F2C06901C002B3739 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4860CD4E2C06A3EE002B3739 /* Build configuration list for PBXNativeTarget "ImagesListTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4860CD4F2C06A3EE002B3739 /* Debug */,
-				4860CD502C06A3EE002B3739 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4860CD672C06A74D002B3739 /* Build configuration list for PBXNativeTarget "ToleoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4860CD682C06A74D002B3739 /* Debug */,
 				4860CD692C06A74D002B3739 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		48C0208E2BFA829100CE873D /* Build configuration list for PBXNativeTarget "ToleoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				48C0208F2BFA829100CE873D /* Debug */,
-				48C020902BFA829100CE873D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
